@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>Aria of Sorrow Bingo Generator</title>
+        <style>
+            
+            table {
+                border: 1px solid black;
+                background-image: url('images/aos_wp2.png');
+            }
+
+            th, td {
+                border: 1px solid black;
+            }
+            
+            th, td {
+                width: 8em;
+                height: 8em;
+              padding: 10px;
+            }
+
+            td.P1 {
+                background-color: cyan;
+            }
+
+            td.P2 {
+                background-color: greenyellow;
+            }
+
+            td.P3 {
+                background-color: orange;
+            }
+            </style>
+    </head>
+    <body>
+        <button type="button" onclick="generateBingo()">Generate</button>
+        <div id="results">
+            <table id="bingo">
+                
+            </table>
+        </div>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            var table = document.getElementById("bingo")
+
+            table.addEventListener('click', function(e) {
+                var td = e.target
+  
+                if (td.tagName !== 'TD') {
+                    return
+                }
+  
+                //if (selectedCells.length) {
+                 //   selectedCells[0].className = ''    
+                //}
+                if(td.className == 'P2'){
+                    td.className = 'P3'
+                }else if(td.className == 'P1'){
+                    td.className = ''
+                }else{
+                    td.className = 'P1'
+                }
+                
+            })
+
+
+            table.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                var td = e.target
+  
+                if (td.tagName !== 'TD') {
+                    return
+                }
+  
+                //if (selectedCells.length) {
+                 //   selectedCells[0].className = ''    
+                //}
+                if(td.className == 'P1'){
+                    td.className = 'P3'
+                }else if(td.className == 'P2'){
+                    td.className = ''
+                }else{
+                    td.className = 'P2'
+                }
+                
+            })
+
+        });
+    </script>
+    <script src="AosBingo.js"></script>
+</html>
