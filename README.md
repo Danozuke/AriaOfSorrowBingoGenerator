@@ -1,5 +1,4 @@
 #Castlevania Aria Of Sorrow Bingo Generator
-First attempt at a bingo card generator for Castlevania Aria of Sorrow. 
 
 This still needs a lot of development, but I'm just hoping to set a starting point for a tool that works with the Aria of Sorrow Randomizer.
 
